@@ -33,3 +33,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# google cloud api key
+secret.json
+
+#vscode
+.vscode
