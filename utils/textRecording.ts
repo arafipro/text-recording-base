@@ -1,3 +1,5 @@
+"use server"
+
 // Imports the Google Cloud client library
 import * as textToSpeech from "@google-cloud/text-to-speech";
 
