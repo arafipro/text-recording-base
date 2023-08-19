@@ -12,9 +12,13 @@ const option = {
 // Creates a client
 const client = new textToSpeech.TextToSpeechClient(option);
 
-export async function textRecording() {
+export async function textRecording(
+  inputText: string,
+  voiceType: string,
+  fileName: string
+) {
   // The text to synthesize
-  const text = "Hello World!";
+  const text = inputText;
 
   // Construct the request
   const request: textToSpeech.protos.google.cloud.texttospeech.v1.ISynthesizeSpeechRequest =
@@ -22,17 +26,22 @@ export async function textRecording() {
       input: { text: text },
       // Select the language and Neural2 voice
       voice: {
-        languageCode: "en-US",
-        ssmlGender: "NEUTRAL",
+        languageCode: "ja-JP",
+        name: voiceType,
       },
-      // select the type of audio encodingNU
+      // select the type of audio encodingN
       audioConfig: { audioEncoding: "MP3" },
     };
-
-  // Performs the text-to-speech request
-  const [response] = await client.synthesizeSpeech(request);
-  // Write the binary audio content to a local file
-  const writeFile = util.promisify(fs.writeFile);
-  await writeFile("output.mp3", response.audioContent as Buffer, "binary");
-  console.log("Audio content written to file: output.mp3");
+  if (inputText && fileName && voiceType !== "音声を選択") {
+    // Performs the text-to-speech request
+    const [response] = await client.synthesizeSpeech(request);
+    // Write the binary audio content to a local file
+    const writeFile = util.promisify(fs.writeFile);
+    await writeFile(
+      `${fileName}.mp3`,
+      response.audioContent as Buffer,
+      "binary"
+    );
+    console.log(`Audio content written to file: ${fileName}.mp3`);
+  }
 }
