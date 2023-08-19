@@ -6,4 +6,8 @@
 
 ## Google Cloud Text-to-Speech
 
-[Text-to-Speech クライアント ライブラリ](https://cloud.google.com/text-to-speech/docs/libraries?hl=ja)
+[Text-to-Speech クライアントライブラリ](https://cloud.google.com/text-to-speech/docs/libraries?hl=ja)
+
+## Tailwind CSS コンポーネントライブラリ
+
+[daisyUI](https://daisyui.com/)
