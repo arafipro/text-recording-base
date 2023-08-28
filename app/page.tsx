@@ -18,7 +18,7 @@ export default function Home() {
   };
 
   return (
-    <main className="bg-gray-200 w-full h-screen">
+    <main className="bg-gray-200 w-full h-screen overflow-hidden">
       <div className="max-w-2xl mx-auto h-full">
         <h1 className="text-3xl text-center py-4">Text to Speech App</h1>
         <form className="h-full" onSubmit={handleSubmit}>
