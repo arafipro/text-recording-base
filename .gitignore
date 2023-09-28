@@ -37,5 +37,8 @@ next-env.d.ts
 # google cloud api key
 secret.json
 
-#vscode
+# vscode
 .vscode
+
+# .idea
+.idea
